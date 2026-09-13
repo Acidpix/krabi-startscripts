@@ -34,6 +34,11 @@ def read_tirette():
     except OSError:
         return None  # gpio.py is holding the pin, skip this poll
 
+def start_FoxGloveBridge():
+    print("ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765")
+    subprocess.Popen("ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765".split())
+    sleep(2)
+
 def killRos():
     print("sudo systemctl stop krabi_color")
     subprocess.Popen("sudo systemctl stop krabi_color".split())
@@ -63,6 +68,7 @@ def checkPowerOff():
 if __name__ == '__main__':
     try:
         tirette_state = None
+        #start_FoxGloveBridge()
 
         # Wait for first successful tirette read
         while tirette_state is None:
