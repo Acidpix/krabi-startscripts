@@ -54,7 +54,7 @@ def startRos():
         "ros2 launch krabi_bringup krabi_launch.py"
         " isSimulation:=False"
         " isBlue:=" + isBluestr +
-        " useLidarLoc:=False"
+        " use_lidar_loc:=False"
         " useTimInsteadOfNeato:=True"
         " xRobotPos:=" + xPos +
         " yRobotPos:=" + yPos +
